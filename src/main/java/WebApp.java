@@ -14,7 +14,7 @@ public class WebApp {
     public static void main(String[] args) throws Exception {
         Auth authService = new AuthService();
 
-        Server server = new Server(8081);
+        Server server = new Server(8083);
         ServletContextHandler handler = new ServletContextHandler();
 
         handler.addServlet(new ServletHolder(new CalcServlet()), "/calc/*");
@@ -24,7 +24,7 @@ public class WebApp {
         handler.addServlet(new ServletHolder(new HistoryServlet()), "/history/*");
         handler.addServlet(new ServletHolder(new RedirectServlet("/register")), "/*");
 
-        handler.addFilter(UserFilter.class,"/register/*", EnumSet.of(DispatcherType.REQUEST));
+        handler.addFilter(UserFilter.class, "/register/*", EnumSet.of(DispatcherType.REQUEST));
 
         server.setHandler(handler);
         server.start();

@@ -26,11 +26,10 @@ public class RegisterServlet extends HttpServlet {
         String login = req.getParameter("user_name");
         String password = req.getParameter("user_pass");
 
-        Register.register(login, password);
         try (PrintWriter printWriter = resp.getWriter()) {
+            Register.register(login, password);
             printWriter.printf("Welcome : %s \n", login);
         } catch (IOException e) {
-            System.out.println(e);
             e.printStackTrace();
         }
 
