@@ -9,9 +9,9 @@ import java.sql.SQLException;
 
 public class Register {
 
-    public static void register(String login, String password){
+    public static void register(String login, String password) {
         Connection conn = DbConnection.getConnection();
-        final String SQLI = "INSERT INTO users (user_name, password) VALUE (?,?)";
+        final String SQLI = "INSERT INTO users (user_name, password) VALUES (?,?)";
         PreparedStatement ps;
         try {
             ps = conn.prepareStatement(SQLI);

@@ -1,5 +1,5 @@
 package auth;
 
 public interface Auth {
-    public boolean check();
+    boolean check(String login, String pass);
 }

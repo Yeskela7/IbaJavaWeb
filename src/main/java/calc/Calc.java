@@ -15,13 +15,13 @@ public class Calc {
 
         return op.flatMap(o -> n1.flatMap(op1 -> n2.flatMap(op2 -> {
             switch (o) {
-                case "plus":
+                case "+":
                     return Optional.of(op1 + op2);
-                case "minus":
+                case "-":
                     return Optional.of(op1 - op2);
-                case "mult":
+                case "*":
                     return Optional.of(op1 * op2);
-                case "div":
+                case "/":
                     return divide(op1, op2);
             }
             return Optional.empty();
